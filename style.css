@@ -107,6 +107,13 @@ span {
 }
 
 /* skills */
+
+.card-text {
+    font-family: 'Poppins', serif;
+    color: black;
+    font-weight: 700;
+}
+
 .skillsText.card {
     height: 350px;
     cursor: pointer;
@@ -139,6 +146,7 @@ span {
     text-align: center;
 }
 
+
 /* contact */
 .contactColumn {
     display: flex;
@@ -146,7 +154,7 @@ span {
     align-items: center;
 }
 .contactColumn i {
-    color: #ffb3ec;
+    color: white;
 }
 
 /* footer */
