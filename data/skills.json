@@ -1,5 +1,25 @@
 [
     {
+        "image": "ISTQB-Casual_original.png",
+        "title": "ISTQB",
+        "text": "Certification ISTQB réussie attestant d'une expertise solide dans le domaine des tests logiciels. Maîtrise des concepts fondamentaux, des méthodologies avancées, et engagement envers l'excellence dans la qualité du logiciel."
+    },
+    {
+        "image": "test.png",
+        "title": "Test",
+        "text": "Tests exploratoires et d’intégration, définition d’une stratégie de test et d’un rédaction d’un cahier de recette, automatisation de tests E2E et d’API"
+    },
+    {
+        "image": "optimisation-et-debug.png",
+        "title": "Optimisation et debug",
+        "text": "Identification des anomalies et correction d’un site existant, optimisation SEO et performance et publication d’un site en ligne"
+    },
+    {
+        "image": "gestion-de-projet.png",
+        "title": "Gestion de projet",
+        "text": "Analyse des besoins d’un client, définition d’une solution technique répondant aux besoins fonctionnelle, planification du projet, méthode AGILE"
+    },
+    {
         "image": "html-css.jpg",
         "title": "HTML - CSS",
         "text": "Intégration d’interfaces responsives et accessibles, utilisation de maquettes Figma, développement d’animations CSS"
@@ -15,18 +35,13 @@
         "text": "Création d’applications React, création de composants et manipulation de leur état"
     },
     {
-        "image": "gestion-de-projet.png",
-        "title": "Gestion de projet",
-        "text": "Analyse des besoins d’un client, définition d’une solution technique répondant aux besoins fonctionnelle, planification du projet"
-    },
+        "image": "mysql.png",
+        "title": "Base de données",
+        "text": "Création de bases de données simples et fonctionnelles, assurant une gestion efficace de l'information et une accessibilité optimale pour le projet"
+    }, 
     {
-        "image": "optimisation-et-debug.png",
-        "title": "Optimisation et debug",
-        "text": "Identification des anomalies et correction d’un site existant, optimisation SEO et performance et publication d’un site en ligne"
-    },
-    {
-        "image": "test.png",
-        "title": "Test",
-        "title ": "Tests exploratoires, unitaires et d’intégration, définition d’une stratégie de test et d’un rédaction d’un cahier de recette, automatisation de tests E2E et d’API"
+        "image": "GitHub-logo.png",
+        "title": "Github",
+        "text": "Configuration et gestion efficace des dépôts GitHub, garantissant une organisation optimale du code source, une collaboration fluide et une intégration simplifiée des modifications."
     }
 ]
