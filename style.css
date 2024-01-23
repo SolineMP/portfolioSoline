@@ -146,7 +146,22 @@ span {
     text-align: center;
 }
 
-
+.dots {
+	bottom: 40px;
+	display: flex;
+}
+.dot {
+	margin-inline: 5px;
+	width: 13px;
+	height: 13px;
+	background-color: white;
+	border: 3px solid #ffb3ec;
+	border-radius: 100%;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+}
+.dot_selected {
+	background-color: #ffb3ec;
+}
 /* contact */
 .contactColumn {
     display: flex;

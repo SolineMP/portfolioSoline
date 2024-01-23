@@ -74,8 +74,8 @@ function createPortfolioFromJSON() {
                 const card = document.createElement("div");
                 card.classList.add("col-lg-4", "mt-4");
                 card.innerHTML = `
-                    <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/${item.image}" style="width:100%">
+                <div class="card portfolioContent">
+                    <img class="card-img-top" src="images/${item.image}">
                     <div class="card-body">
                         <h4 class="card-title">${item.title}</h4>
                         <p class="card-text">${item.text}</p>
@@ -98,6 +98,48 @@ function createPortfolioFromJSON() {
             });
         });
 }
+
+//Carroussel project 
+
+const leftArrow = document.getElementById("arrowLeft")
+const rightArrow = document.getElementById("arrowRight")
+let dotContainer = document.querySelector(".dots")
+
+fetch("../data/portfolio.json")
+        .then((response) => response.json())
+        .then((data) => {
+            data.forEach(() => {
+                const dot = document.createElement("div")
+                dot.classList.add("dot")
+                dotContainer.appendChild(dot)
+                // Selection du premier bullet point
+                let dotArray = dotContainer.querySelectorAll(".dot")
+                dotArray[0].classList.toggle("dot_selected")
+            })
+        })
+
+//Fonction pour le changement de la slide : true vers la droite, false vers la gauche 
+// et changement des bullets points
+let index = 0
+function changeSlide (toRight) {
+	dotArray[index].classList.remove("dot_selected")
+	if (toRight === true) {
+		index++
+	} else {
+		index--
+	}
+	if (index === slides.length) {
+		index = 0 
+	} else if (index === -1) {
+		index = slides.length - 1
+	}
+	document.querySelector(".banner-img").src = "assets/images/slideshow/" + data[index].image;
+	textPresentation.innerHTML = data[index].
+	dotArray[index].classList.add("dot_selected")
+} 
+
+
+
 
 // Call the functions to execute the code
 handleNavbarScroll();
