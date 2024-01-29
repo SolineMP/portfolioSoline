@@ -4,25 +4,39 @@ body {
     background-color: black!important;
 }
 
+a:hover{
+    color: white!important;
+}
+
 #contact {
-    background-color: #ffb3ec;
+    background-color: #ffb3ec!important;
 }
 
 #about,
 #skills,
-#portfolio,
-#contact {
+#portfolio {
     margin-top: 4rem;
     padding-top: 4rem;
 }
 #about h2,
 #skills h2,
-#portfolio h2,
-#contact h2 {
+#portfolio h2 {
     margin-bottom: 3rem;
     color: white;
     font-family: 'Abril Fatface', serif;
 }
+
+#portfolio h3,
+#contact h3 {
+    font-family: 'Abril Fatface', serif;
+}
+
+#portfolio p,
+#contact p {
+    font-family: 'Poppins', serif;
+    font-weight: 800;
+}
+
 #contact {
     padding-bottom: 4rem;
 }
@@ -45,6 +59,7 @@ body {
     text-decoration: none;
     font-family: 'Poppins';
     font-size: larger;
+    font-weight: 700;
 }
 
 /* display background dark color on navbar scroll */
@@ -54,20 +69,36 @@ body {
 
 /* hero background image */
 .bgimage {
-    height: 100vh;
+    height: 70vh;
     max-height: 900px;
     background-color: black;
     background-size: cover;
     position: relative;
 }
+
+.presentation {
+    margin-top: 25vh!important;
+}
+
+.myPhoto {
+    width: 100%;
+    max-width: 50%;
+    background: linear-gradient(90deg, #ffb3ec 0%, #94bbe9 100%);
+    border-radius: 13px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
 /* text css above hero image*/
 .hero_title {
     font-size: 4.5rem;
     font-family: 'Abril Fatface', serif;
+    color: white;
 }
 .hero_desc {
     font-size: 2rem;
     font-family: 'Poppins', sans-serif;
+    color: white;
 }
 .hero-text {
     text-align: left;
@@ -81,6 +112,7 @@ body {
 
 span {
     color: #ffb3ec;
+    font-weight: 800;
 }
 
 .flex {
@@ -91,17 +123,20 @@ span {
     color: #ffb3ec;
 }
 
+.pinkBg {
+    background-color: #ffb3ec;
+}
+
 /* about */
 
 .introductionText {
     color: white;
     font-family: 'Poppins', serif;
+    font-weight: 700;
 }
 
 .imageAboutPage {
     width: 100%;
-}
-.imageAboutPage {
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
@@ -146,23 +181,24 @@ span {
     text-align: center;
 }
 
-.dots {
-	bottom: 40px;
-	display: flex;
+.carousel-inner {
+    min-height: 40vh;
 }
-.dot {
-	margin-inline: 5px;
-	width: 13px;
-	height: 13px;
-	background-color: white;
-	border: 3px solid #ffb3ec;
-	border-radius: 100%;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
-}
-.dot_selected {
-	background-color: #ffb3ec;
-}
+
 /* contact */
+
+#contact {
+    max-height: 25vh;
+    background-color: #ffb3ec;
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+    color: white;
+    font-family: 'Abril Fatface', serif;
+}
 .contactColumn {
     display: flex;
     flex-direction: column;
@@ -171,5 +207,36 @@ span {
 .contactColumn i {
     color: white;
 }
+#contact p, 
+#contact a {
+    text-decoration: none;
+    color: black;
 
+}
 /* footer */
+
+.footerBar {
+    background-color: #ffb3ec;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Poppins', serif;
+    color: black;
+    font-weight: 700;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 992px) {
+    .imageAboutPage {
+        max-width: 50%;
+    }
+
+    .carousel-inner {
+        min-height: 25vh;
+    }
+
+    #contact {
+        max-height: 100%;
+    }
+}

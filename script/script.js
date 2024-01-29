@@ -10,7 +10,6 @@ function handleNavbarScroll() {
         }
     };
 }
-
 // Function to handle navbar collapse on small devices after a click
 function handleNavbarCollapse() {
     const navLinks = document.querySelectorAll(".nav-item");
@@ -22,7 +21,6 @@ function handleNavbarCollapse() {
         });
     });
 }
-
 // Function to dynamically create HTML elements from the JSON file
 function createSkillsFromJSON() {
     const container = document.querySelector("#skills .container");
@@ -40,8 +38,8 @@ function createSkillsFromJSON() {
                 card.innerHTML = `
                     <div class="card skillsText">
                         <div class="card-body">
-                            <img src="./images/${item.image}" />
-                            <h4 class="card-title mt-3">${item.title}</h4>
+                            <img src="./images/${item.image}" alt="icone liée à la compétence"/>
+                            <h3 class="card-title mt-3">${item.title}</h3>
                             <p class="card-text mt-3">${item.text}</p>
                         </div>
                     </div>
@@ -75,9 +73,9 @@ function createPortfolioFromJSON() {
                 card.classList.add("col-lg-4", "mt-4");
                 card.innerHTML = `
                 <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/${item.image}">
+                    <img class="card-img-top" src="images/${item.image}" alt="présentation du travail">
                     <div class="card-body">
-                        <h4 class="card-title">${item.title}</h4>
+                        <h3 class="card-title">${item.title}</h3>
                         <p class="card-text">${item.text}</p>
                         <div class="text-center">
                             <a href="${item.link}" class="btn btn-success" target="_blank">Lien</a>
@@ -98,51 +96,51 @@ function createPortfolioFromJSON() {
             });
         });
 }
-
 //Carroussel project 
-
-const leftArrow = document.getElementById("arrowLeft")
-const rightArrow = document.getElementById("arrowRight")
-let dotContainer = document.querySelector(".dots")
-
 fetch("../data/portfolio.json")
-        .then((response) => response.json())
-        .then((data) => {
-            data.forEach(() => {
-                const dot = document.createElement("div")
-                dot.classList.add("dot")
-                dotContainer.appendChild(dot)
-                // Selection du premier bullet point
-                let dotArray = dotContainer.querySelectorAll(".dot")
-                dotArray[0].classList.toggle("dot_selected")
-            })
-        })
+  .then(response => response.json())
+  .then(slides => {
+    // Récupérer la référence de la div du carrousel
+    const carouselInner = document.querySelector(".carousel-inner");
 
-//Fonction pour le changement de la slide : true vers la droite, false vers la gauche 
-// et changement des bullets points
-let index = 0
-function changeSlide (toRight) {
-	dotArray[index].classList.remove("dot_selected")
-	if (toRight === true) {
-		index++
-	} else {
-		index--
-	}
-	if (index === slides.length) {
-		index = 0 
-	} else if (index === -1) {
-		index = slides.length - 1
-	}
-	document.querySelector(".banner-img").src = "assets/images/slideshow/" + data[index].image;
-	textPresentation.innerHTML = data[index].
-	dotArray[index].classList.add("dot_selected")
-} 
+    if (!carouselInner) {
+      console.error("Carousel inner container not found.");
+      return;
+    }
 
+    // Ajouter les diapositives dynamiquement
+    slides.forEach((slide, index) => {
+      if (!slide || !slide.image || !slide.title || !slide.text) {
+        console.error("Invalid slide data at index:", index);
+        return;
+      }
 
+      const carouselItem = document.createElement("div");
+      carouselItem.classList.add("carousel-item");
 
+      // Ajouter la classe active à la première diapositive
+      if (index === 0) {
+        carouselItem.classList.add("active");
+      }
+      
+    carouselItem.innerHTML = `
+        <img src="../images/${slide.image}" class="d-block w-50 rounded mx-auto rounded" alt="${slide.title}">
+        <div class="text-center d-md-block text-white">
+            <h3 class="mt-2 mb-3 col-xs-1 text-center">${slide.title}</h3>
+            <p class="mb-3 col-xs-1 text-center">${slide.text}</p>
+            <button class="btn btn-light pink"><a href="${slide.link}" target="_blank" class="text-decoration-none text-dark">Lien</a></button>
+        </div>
+    `;
+      // Ajouter la diapositive à la div du carrousel
+      carouselInner.appendChild(carouselItem);
+    });
+  })
+  .catch(error => {
+    console.error("Error fetching or processing data:", error);
+  });
 
 // Call the functions to execute the code
 handleNavbarScroll();
 handleNavbarCollapse();
 createSkillsFromJSON();
-createPortfolioFromJSON();
+// createPortfolioFromJSON();
