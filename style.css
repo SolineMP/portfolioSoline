@@ -228,6 +228,17 @@ span {
 /* Responsive */
 
 @media screen and (max-width: 992px) {
+    /* title */
+    .bgimage {
+        height: fit-content;
+    }
+    .hero_title {
+        font-size: xx-large;
+    }
+
+    .hero_desc {
+        font-size: x-large;
+    }
     .imageAboutPage {
         max-width: 50%;
     }

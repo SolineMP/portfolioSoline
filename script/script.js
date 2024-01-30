@@ -14,7 +14,6 @@ function handleNavbarScroll() {
 function handleNavbarCollapse() {
     const navLinks = document.querySelectorAll(".nav-item");
     const menuToggle = document.getElementById("navbarSupportedContent");
-
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
             new bootstrap.Collapse(menuToggle).toggle();
@@ -26,7 +25,6 @@ function createSkillsFromJSON() {
     const container = document.querySelector("#skills .container");
     let row = document.createElement("div");
     row.classList.add("row");
-
     // Load the JSON file
     fetch("../data/skills.json")
         .then((response) => response.json())
@@ -44,10 +42,8 @@ function createSkillsFromJSON() {
                         </div>
                     </div>
                 `;
-
                 // Append the card to the current row
                 row.appendChild(card);
-
                 // If the index is a multiple of 3 or it's the last element, create a new row
                 if ((index + 1) % 3 === 0 || index === data.length - 1) {
                     container.appendChild(row);
@@ -62,7 +58,6 @@ function createPortfolioFromJSON() {
     const container = document.querySelector("#portfolio .container");
     let row = document.createElement("div");
     row.classList.add("row");
-
     // Load the JSON file
     fetch("../data/portfolio.json")
         .then((response) => response.json())
@@ -83,10 +78,8 @@ function createPortfolioFromJSON() {
                     </div>
                 </div>
                 `;
-
                 // Append the card to the current row
                 row.appendChild(card);
-
                 // If the index is a multiple of 3 or it's the last element, create a new row
                 if ((index + 1) % 3 === 0 || index === data.length - 1) {
                     container.appendChild(row);
@@ -102,27 +95,22 @@ fetch("../data/portfolio.json")
   .then(slides => {
     // Récupérer la référence de la div du carrousel
     const carouselInner = document.querySelector(".carousel-inner");
-
     if (!carouselInner) {
       console.error("Carousel inner container not found.");
       return;
     }
-
     // Ajouter les diapositives dynamiquement
     slides.forEach((slide, index) => {
       if (!slide || !slide.image || !slide.title || !slide.text) {
         console.error("Invalid slide data at index:", index);
         return;
       }
-
       const carouselItem = document.createElement("div");
       carouselItem.classList.add("carousel-item");
-
       // Ajouter la classe active à la première diapositive
       if (index === 0) {
         carouselItem.classList.add("active");
       }
-      
     carouselItem.innerHTML = `
         <img src="../images/${slide.image}" class="d-block w-50 rounded mx-auto rounded" alt="${slide.title}">
         <div class="text-center d-md-block text-white">
@@ -138,7 +126,6 @@ fetch("../data/portfolio.json")
   .catch(error => {
     console.error("Error fetching or processing data:", error);
   });
-
 // Call the functions to execute the code
 handleNavbarScroll();
 handleNavbarCollapse();
