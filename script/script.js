@@ -115,8 +115,9 @@ fetch("../data/portfolio.json")
         <img src="../images/${slide.image}" class="d-block w-50 rounded mx-auto rounded" alt="${slide.title}">
         <div class="text-center d-md-block text-white">
             <h3 class="mt-2 mb-3 col-xs-1 text-center">${slide.title}</h3>
-            <p class="mb-3 col-xs-1 text-center">${slide.text}</p>
-            <button class="btn btn-light pink"><a href="${slide.link}" target="_blank" class="text-decoration-none text-dark">Lien</a></button>
+            <p class="mb-3 col-xs-1 text-center ms-1 me-1 carouselText">${slide.text}</p>
+            <button class="btnCarouselLg"><a href="${slide.link}" target="_blank" class="text-decoration-none text-light">Lien</a></button>
+            <button class="btnCarouselSm"><a href="${slide.link}" target="_blank" class="text-decoration-none text-light">+</a></button>
         </div>
     `;
       // Ajouter la diapositive à la div du carrousel

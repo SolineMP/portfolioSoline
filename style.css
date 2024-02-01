@@ -16,12 +16,11 @@ a:hover{
 #skills,
 #portfolio {
     margin-top: 4rem;
-    padding-top: 4rem;
 }
 #about h2,
 #skills h2,
 #portfolio h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: white;
     font-family: 'Abril Fatface', serif;
 }
@@ -69,13 +68,6 @@ a:hover{
 }
 
 /* hero background image */
-.bgimage {
-    height: 40vh;
-    max-height: 900px;
-    background-color: black;
-    background-size: cover;
-    position: relative;
-}
 
 .presentation {
     margin-top: 16vh!important;
@@ -190,10 +182,38 @@ span {
     min-height: 40vh;
 }
 
+
+.btnCarouselLg {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Poppins', serif;
+    font-weight: 700;
+    padding: 10px;
+    width: 10%;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .btnCarouselLG:hover {
+    background: radial-gradient(circle, rgba(240,179,236,1) 0%, rgba(200,148,233,1) 100%);
+  }
+  
+  .btnCarouselSm {
+    display: none;
+  }
+
 /* contact */
 
 #contact {
-    max-height: 25vh;
     background-color: #ffb3ec;
     margin-top: 2rem;
     padding-top: 2rem;
@@ -287,11 +307,56 @@ span {
         max-width: 50%;
     }
 
+    /* Caroussel */
     .carousel-inner {
         min-height: 25vh;
     }
 
+    .btnCarouselLg {
+        display: none;
+    }
+
+    .btnCarouselSm {
+        display: inline-block;
+        background-color: #7b38d8;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 100%;
+        font-family: 'Poppins', serif;
+        font-weight: 700;
+        padding: 10px;
+        width: 10%;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    /* Contact */
+
+    .fixedBtn {
+        width: 100px;
+        font-size: 80%;
+        padding: 10px;
+    }
+
     #contact {
         max-height: 100%;
+    }
+}
+
+@media screen and (min-width: 1860px) {
+    .carroussel-inner {
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carouselText {
+        margin-top: 50px;
     }
 }
