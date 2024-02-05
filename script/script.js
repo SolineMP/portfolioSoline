@@ -53,42 +53,6 @@ function createSkillsFromJSON() {
             });
         });
 }
-// Function to dynamically create HTML elements from the JSON file
-function createPortfolioFromJSON() {
-    const container = document.querySelector("#portfolio .container");
-    let row = document.createElement("div");
-    row.classList.add("row");
-    // Load the JSON file
-    fetch("../data/portfolio.json")
-        .then((response) => response.json())
-        .then((data) => {
-            // Iterate through the JSON data and create HTML elements
-            data.forEach((item, index) => {
-                const card = document.createElement("div");
-                card.classList.add("col-lg-4", "mt-4");
-                card.innerHTML = `
-                <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/${item.image}" alt="présentation du travail">
-                    <div class="card-body">
-                        <h3 class="card-title">${item.title}</h3>
-                        <p class="card-text">${item.text}</p>
-                        <div class="text-center">
-                            <a href="${item.link}" class="btn btn-success" target="_blank">Lien</a>
-                        </div>
-                    </div>
-                </div>
-                `;
-                // Append the card to the current row
-                row.appendChild(card);
-                // If the index is a multiple of 3 or it's the last element, create a new row
-                if ((index + 1) % 3 === 0 || index === data.length - 1) {
-                    container.appendChild(row);
-                    row = document.createElement("div");
-                    row.classList.add("row");
-                }
-            });
-        });
-}
 //Carroussel project 
 fetch("../data/portfolio.json")
   .then(response => response.json())
@@ -116,8 +80,8 @@ fetch("../data/portfolio.json")
         <div class="text-center d-md-block text-white">
             <h3 class="mt-2 mb-3 col-xs-1 text-center">${slide.title}</h3>
             <p class="mb-3 col-xs-1 text-center ms-1 me-1 carouselText">${slide.text}</p>
-            <button class="btnCarouselLg"><a href="${slide.link}" target="_blank" class="text-decoration-none text-light">Lien</a></button>
-            <button class="btnCarouselSm"><a href="${slide.link}" target="_blank" class="text-decoration-none text-light">+</a></button>
+            <a href="${slide.link}" target="_blank" class="btnCarouselLg text-decoration-none text-light">Lien</a>
+            <a href="${slide.link}" target="_blank" class="btnCarouselSm text-decoration-none text-light">+</a>
         </div>
     `;
       // Ajouter la diapositive à la div du carrousel
@@ -131,4 +95,3 @@ fetch("../data/portfolio.json")
 handleNavbarScroll();
 handleNavbarCollapse();
 createSkillsFromJSON();
-// createPortfolioFromJSON();

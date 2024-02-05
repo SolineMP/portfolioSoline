@@ -70,7 +70,7 @@ a:hover{
 /* hero background image */
 
 .presentation {
-    margin-top: 16vh!important;
+    margin-top: 10vh!important;
 }
 
 .myPhoto {
@@ -176,6 +176,10 @@ span {
 /* portfolio */
 #portfolio p {
     text-align: center;
+}
+
+.carousel {
+    min-height: 35vh;
 }
 
 .carousel-inner {
@@ -350,13 +354,27 @@ span {
 }
 
 @media screen and (min-width: 1860px) {
+    .carousel {
+        min-height: 50vh;
+    }
+    
     .carroussel-inner {
-        height: 50vh;
+        height: 100vh;
     }
 }
 
 @media screen and (max-width: 550px) {
     .carouselText {
-        margin-top: 50px;
+        margin-top: 100px;
+    }
+
+    .card-text {
+        font-size: 80%;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 754px) {
+    .carouselText {
+        margin-top: 75px
     }
 }
